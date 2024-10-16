@@ -1,0 +1,49 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainBoxapi{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .imageSet{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-left: 18%;
+    margin-top: 10px;
+  }
+  .apiBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(89, 89, 89); */
+    color: white;
+    border-radius: 20px;
+    width: 400px;
+    margin: 0px 15px 10px 15px;
+    padding: 15px 0px 15px 0px;
+  }
+  .title {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 50px;
+width: 200px;
+font-size: 20px;
+/* background-color: green; */
+  }
+ 
+  .imageApi{
+    border-radius: 10px;
+    height:300px;
+    width:200px;
+  }

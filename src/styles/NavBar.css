@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Eater&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+
+.navbar{
+  z-index: 100;
+  position: fixed;
+  /* height: 40px; */
+  width: 100%;
+  display: flex;
+  background-color: #0b0b0b;
+  padding:12px 10px;
+  justify-content: space-between;
+  transition: 0.3s ease-in-out;
+}
+
+.active-nav{
+  height: auto;
+}
+
+.menuBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin-left: 15px;
+  height: 35px;
+  min-width: 35px;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.menuBtn:hover {
+  color: black;
+  background-color: #eeeeee
+}
+
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 16px;
+  gap: 18px 24px;
+  padding: 0;
+}
+
+.links {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  height: 45px;
+  width: 130px;
+  padding: 0 20px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #eeeeee27;
+}
+
+.links:hover {
+  transform: scale(1.05);
+}
+
+.right-elements {
+  display: flex;
+}
+
+.demon {
+  width: auto;
+  height: 45px;
+  position: absolute;
+  left: 90px;
+  top: 13px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.ghost {
+  font-size: 1.8rem;
+  font-family: "Eater", serif;
+  text-decoration: none;
+  color: white;
+  z-index: 10;
+  transition: 0.5s ease-in-out;
+}
+
+.ghost:hover {
+  color: rgb(255, 255, 255);
+  animation: ghostAnimation 8s infinite, vibrate 0.3s infinite linear alternate;
+
+}
+
+@keyframes ghostAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(-2px, 2px);
+  }
+
+  50% {
+    transform: translate(2px, -2px);
+  }
+
+  75% {
+    transform: translate(2px, 2px);
+  }
+
+  100% {
+    transform: translate(-2px, -2px);
+  }
+}
+
+@keyframes ghost {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.ghost:hover+.demon {
+  opacity: 1;
+  animation: ghost 8s infinite, vibrate 0.3s infinite linear alternate;
+}
+
+@media  screen and (max-width:1460px) {
+  .nav-links{
+   display: none !important; 
+  }
+}

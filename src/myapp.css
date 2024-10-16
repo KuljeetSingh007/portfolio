@@ -1,0 +1,9 @@
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}

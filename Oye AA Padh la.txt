@@ -1,0 +1,8 @@
+Je webpage da icon change krna hove :-
+
+net to dwnld krke favicon.ico naam dena fer ehnu public folder ch sit dena .
+Pehla wala favicon.ico othe houga ohnu delete krlo ja chak do .
+
+hor kuj ni krna kise file ch kuj ni change krna.
+
+hogya bss....

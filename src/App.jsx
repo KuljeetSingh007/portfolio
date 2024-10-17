@@ -8,7 +8,7 @@ function App() {
       <LoadingBarComponent color={'#94212f'} />
       <div className="body">
         <div className="imageBox">
-          <Link  onClick={() => handleNavigation('/main')} >Let's Begin</Link>
+          <Link onClick={() => handleNavigation('/main')} >Let's Begin</Link>
         </div>
       </div>
     </>

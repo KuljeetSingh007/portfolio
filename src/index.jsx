@@ -12,15 +12,15 @@ import { Provider } from 'react-redux';
 
 const router = createBrowserRouter([
   { path: "/portfolio/", element: <App /> },
-  { path: "/main", element: <MainContent /> },
-  { path: "/api", element: <ApiFetching /> },
+  { path: "/portfolio/main/", element: <MainContent /> },
+  { path: "/portfolio/api/", element: <ApiFetching /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider basename='/portfolio' router={router} />
+      <RouterProvider basename='/portfolio/' router={router} />
     </Provider>
   </React.StrictMode>
 );

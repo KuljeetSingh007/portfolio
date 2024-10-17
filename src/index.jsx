@@ -12,8 +12,8 @@ import { Provider } from 'react-redux';
 
 const router = createBrowserRouter([
   { path: "/portfolio/", element: <App /> },
-  { path: "/portfolio/main/", element: <MainContent /> },
-  { path: "/portfolio/api/", element: <ApiFetching /> },
+  { path: "/main/", element: <MainContent /> },
+  { path: "/api/", element: <ApiFetching /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

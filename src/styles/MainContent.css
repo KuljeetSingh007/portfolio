@@ -15,7 +15,8 @@ body {
     padding-top: 75px;
     display: flex;
     flex-direction: column;
-    width: calc(100vw-100px);
+    /* width: calc(100vw-100px); */
+    width: 100%;
     transition: 0.4s ease-in-out;
 }
 

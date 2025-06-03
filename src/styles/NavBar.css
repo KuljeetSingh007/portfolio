@@ -10,6 +10,8 @@
   position: fixed;
   top: -200px;
   width: 100%;
+  /* width: calc(100vw-100px); */
+
   display: flex;
   background-color: black;
   padding: 12px 10px;

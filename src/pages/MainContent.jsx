@@ -16,7 +16,7 @@ function MainContent() {
     return setShow(!show);
   }
   return (
-    <>
+    <div>
       <LoadingBarComponent color={"#EEEEEE"} />
       <header className='sticky'>
         <NavBar show={show} click={handleClick} handleNavigation={handleNavigation} />
@@ -37,7 +37,7 @@ function MainContent() {
           <Education />
         </body>
         <Contact />
-      </main></>
+      </main></div>
   );
 }
 export default MainContent;

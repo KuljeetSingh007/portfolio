@@ -19,9 +19,7 @@ body {
     transition: 0.4s ease-in-out;
 }
 
-.expand {
-    padding-left: 14%;
-}
+
 
 .bodyContent {
     padding: 0 24px;
@@ -33,7 +31,7 @@ body {
 
 .head-sec {
     padding: 30px 0;
-    background-color: #0a0a0a9c;
+    background-color: #101010;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -49,12 +47,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .head-sec img {
-    opacity: 0.4;
-    width: 14vw;
-    min-width: 180px;
+    opacity: 0.7;
+    width: 10vw;
+    min-width: 120px;
 }
 
 .head-sec h1 {
@@ -154,7 +153,7 @@ h3 {
 }
 
 #css {
-    color: #37a6d8;
+    color: #663399;
 }
 
 #javascript {
@@ -372,6 +371,9 @@ button:hover {
 }
 
 @media screen and (max-width:500px) {
+   .head-sec{
+    flex-direction: column;
+   }
     .grid-projects {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }

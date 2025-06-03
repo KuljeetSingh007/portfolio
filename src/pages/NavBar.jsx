@@ -1,16 +1,17 @@
+import { RiMenu5Fill } from "react-icons/ri";
 import React from 'react';
 import '../styles/NavBar.css';
 import { Link as ScrollLink } from 'react-scroll';
 import WhiteDemonLogo from '../images/whitedemon.png';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function NavBar(props) {
+
   return (
     <nav className={props.show ? "active-nav navbar" : "navbar"}>
-      <div onClick={props.click} className="menuBtn"> <FontAwesomeIcon icon={faBars} /></div>
-      <ul className='nav-links'>
+      <div onClick={props.click} className={"menuBtn"}> <RiMenu5Fill /></div>
+      <div> <RiMenu5Fill /></div>
+      <ul className={"nav-links"}>
         <li><Link onClick={() => props.handleNavigation('/main')} className='links'>Home</Link></li>
         <li><ScrollLink to="main" smooth={true} duration={500} className='links'>About</ScrollLink></li>
         <li><ScrollLink to="summary" smooth={true} duration={500} className='links'>Summary</ScrollLink></li>
@@ -21,10 +22,10 @@ function NavBar(props) {
         {/* <li><Link onClick={() => props.handleNavigation('/api')} className='links'>ApiPage</Link></li> */}
       </ul>
       <div className='right-elements'>
-      <a href="#ghost" className="ghost">Ghost</a>
+        <a href="#ghost" className="ghost">Devil</a>
         <img className="demon" src={WhiteDemonLogo} alt="White Demon Logo" />
       </div>
-    </nav>
+    </nav >
   );
 }
 

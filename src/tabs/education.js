@@ -11,7 +11,7 @@ export default function Education() {
                 <li><span>Degree :- </span>Bachelor of Computer Applications.</li>
                 <li><span>Field of Study :- </span>Information Technology</li>
                 <li><span>College :- </span>Syectic Business School</li>
-                <li><span>GPA :- </span>7</li>
+                <li><span>GPA :- </span>7.5</li>
             </ul>
         </div>)
 }

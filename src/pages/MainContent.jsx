@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/MainContent.css';
 import NavBar from './NavBar';
-import SideBar from './SideBar';
 import image from "../images/I.jpg";
 import useLoadingNavigation from '../components/navigationFunc';
 import Summary from '../tabs/summary';
@@ -22,10 +21,8 @@ function MainContent() {
       <header className='sticky'>
         <NavBar show={show} click={handleClick} handleNavigation={handleNavigation} />
       </header>
-      <main className={show ? 'main expand' : 'main '} >
-        <div >
-          <SideBar show={show} />
-        </div>
+
+      <main className={show ? 'main active' : 'main'} >
         <div className='head-sec'>
           <span>
             <img src={image} alt="me" />

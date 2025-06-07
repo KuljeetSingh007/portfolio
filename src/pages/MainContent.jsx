@@ -29,13 +29,13 @@ function MainContent() {
           </span>
           <h1>Kuljeet Singh</h1>
         </div>
-        <body className="bodyContent" >
+        <div className="bodyContent" >
           <Summary />
           <Certificates />
           <Skills />
           <Projects />
           <Education />
-        </body>
+        </div>
         <Contact />
       </main></div>
   );

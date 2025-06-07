@@ -300,7 +300,7 @@ h3 {
     resize: none;
 }
 
-button {
+.submit-btn {
     padding: 10px;
     background-color: #9f0000;
     color: white;
@@ -308,9 +308,20 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.submit-btn:hover {
     background-color: #c43535;
 }
+
+.submit-btn-disabled {
+    background-color: grey;
+    cursor: default;
+    opacity: 0.2;
+}
+
+.submit-btn-disabled:hover {
+    background-color: grey;
+}
+
 
 .icons-list ul {
     display: flex;
@@ -372,9 +383,10 @@ button:hover {
 }
 
 @media screen and (max-width:500px) {
-   .head-sec{
-    flex-direction: column;
-   }
+    .head-sec {
+        flex-direction: column;
+    }
+
     .grid-projects {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }

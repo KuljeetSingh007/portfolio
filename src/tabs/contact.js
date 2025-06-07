@@ -1,68 +1,106 @@
-import React from 'react'
+import React, { useState } from 'react';
 import useLoadingNavigation from '../components/navigationFunc';
 import Swal from 'sweetalert2';
 
 export default function Contact() {
     const { LoadingBarComponent } = useLoadingNavigation();
 
-    // web3 forms react setup..
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
+    const isFormValid = Object.values(formData).every((val) => val.trim() !== '');
+
+    const handleChange = (e) => {
+        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+
     const onSubmit = async (event) => {
         event.preventDefault();
-        const formData = new FormData(event.target);
 
-        formData.append("access_key", "cd39e2b2-478f-4a14-9f0d-3d25758b10c7");
+        const data = new FormData(event.target);
+        data.append('access_key', 'cd39e2b2-478f-4a14-9f0d-3d25758b10c7');
 
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(Object.fromEntries(data))
+        });
 
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: json
-        }).then((res) => res.json());
+        const result = await response.json();
 
-        if (res.success) {
+        if (result.success) {
             Swal.fire({
-                title: "Success!",
-                text: "Email sent succesfully!",
-                icon: "success"
-              });
+                title: 'Success!',
+                text: 'Email sent successfully!',
+                icon: 'success'
+            });
+            setFormData({ name: '', email: '', phone: '', message: '' });
         }
     };
-    // web3forms setup end here..
 
     return (
         <div className="contact">
-            <LoadingBarComponent color={"#EEEEEE"} />
+            <LoadingBarComponent color="#EEEEEE" />
             <div className="contact-item">
                 <form onSubmit={onSubmit}>
-                    <div class="form-row">
-                        <input name='name' type="text" placeholder="Full Name" required />
-                        <input name='email' type="text" placeholder="Email" required />
+                    <div className="form-row">
+                        <input
+                            name="name"
+                            type="text"
+                            placeholder="Full Name"
+                            required
+                            value={formData.name}
+                            onChange={handleChange}
+                        />
+                        <input
+                            name="email"
+                            type="text"
+                            placeholder="Email"
+                            required
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
                     </div>
-                    <div class="form-row">
-                        <input name='phone' type="tel" placeholder="Phone Number" required />
+                    <div className="form-row">
+                        <input
+                            name="phone"
+                            type="tel"
+                            placeholder="Phone Number"
+                            required
+                            value={formData.phone}
+                            onChange={handleChange}
+                        />
                     </div>
-                    <div class="form-row">
-                        <textarea name='message' placeholder="Leave a message..." required></textarea>
+                    <div className="form-row">
+                        <textarea
+                            name="message"
+                            placeholder="Leave a message..."
+                            required
+                            value={formData.message}
+                            onChange={handleChange}
+                        />
                     </div>
-                    <div class="form-row">
-                        <button type="submit">Contact Me</button>
+                    <div className="form-row">
+                        <button className={isFormValid === true ? 'submit-btn' : 'submit-btn submit-btn-disabled'} type="submit" disabled={!isFormValid}>
+                            Send
+                        </button>
                     </div>
-
                 </form>
             </div>
+
             <div className="icons-list">
                 <ul>
-                    <li><i class="fa-brands fa-github"></i></li>
-                    <li><i class="fa-brands fa-facebook-f"></i></li>
-                    <li><i class="fa-brands fa-linkedin-in"></i></li>
-                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i className="fa-brands fa-github"></i></li>
+                    <li><i className="fa-brands fa-facebook-f"></i></li>
+                    <li><i className="fa-brands fa-linkedin-in"></i></li>
+                    <li><i className="fa-brands fa-twitter"></i></li>
                 </ul>
             </div>
+
             <div className="con-details">
                 <ul>
                     <p>Contact Details</p>
@@ -73,5 +111,5 @@ export default function Contact() {
                 </ul>
             </div>
         </div>
-    )
+    );
 }
